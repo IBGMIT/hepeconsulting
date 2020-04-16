@@ -18,8 +18,9 @@ $project->checkLoggedIn();
                 <th>Project Nr.</th>
                 <th>Date Created</th>
                 <th>Project Name</th>
-                <th>customer_id</th>
+                <th>Customer ID</th>
                 <th>Sats</th>
+                <th>User ID</th>
                 <th>Print</th>
                 <th>Edit</th>
                 <th>Delete</th>
@@ -28,7 +29,7 @@ $project->checkLoggedIn();
             <?php
             $projectList = $project->getProjectList();
             foreach($projectList as $projectDetails){
-                $projectDate = date("d/M/Y, H:i:s", strtotime($projectDetails["date_created"]));
+                $projectDate = date("d/M/Y", strtotime($projectDetails["date"]));
                 echo '
               <tr>
                 <td>'.$projectDetails["project_id"].'</td>
@@ -36,6 +37,7 @@ $project->checkLoggedIn();
                 <td>'.$projectDetails["name"].'</td>
                 <td>'.$projectDetails["customer_id"].'</td>
                 <td>'.$projectDetails["sats"].'</td>
+                <td>'.$projectDetails["user_id"].'</td>
                 <td><a href="print_invoice.php?project_id='.$projectDetails["project_id"].'" title="Print Project"><span class="glyphicon glyphicon-print"></span></a></td>
                 <td><a href="edit_project.php?update_id='.$projectDetails["project_id"].'"  title="Edit Project"><span class="glyphicon glyphicon-edit"></span></a></td>
                 <td><a href="#" id="'.$projectDetails["project_id"].'" class="deleteInvoice"  title="Delete Invoice"><span class="glyphicon glyphicon-remove"></span></a></td>
