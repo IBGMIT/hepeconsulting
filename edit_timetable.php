@@ -54,6 +54,7 @@ if(!empty($_GET['update_id']) && $_GET['update_id']) {
                                 <th width="15%">Description</th>
                                 <th width="15%">time</th>
                                 <th width="15%">project_id</th>
+                                <th width="15%">user_id</th>
                             </tr>
                             <?php
                             $count = 0;
@@ -68,6 +69,7 @@ if(!empty($_GET['update_id']) && $_GET['update_id']) {
                                     <td><input type="text" value="<?php echo $timetableItem["description"]; ?>" name="description[]" id="description_<?php echo $count; ?>" class="form-control price" autocomplete="off"></td>
                                     <td><input type="number" value="<?php echo $timetableItem["time"]; ?>" name="time[]" id="time_<?php echo $count; ?>" class="form-control total" autocomplete="off"></td>
                                     <td><input type="number" value="<?php echo $timetableItem["project_id"]; ?>" name="projectID[]" id="projectID_<?php echo $count; ?>" class="form-control total" autocomplete="off"></td>
+                                    <td><input type="number" value="<?php echo $timetableItem["user_id"]; ?>" name="userID[]" id="userID_<?php echo $count; ?>" class="form-control total" autocomplete="off"></td>
                                     <input type="hidden" value="<?php echo $timetableItem['project_id']; ?>" class="form-control" name="projectId[]">
                                 </tr>
                             <?php } ?>
@@ -83,7 +85,7 @@ if(!empty($_GET['update_id']) && $_GET['update_id']) {
                         <br>
                         <div class="form-group">
                             <input type="hidden" value="<?php echo $_SESSION['userid']; ?>" class="form-control" name="userId">
-                            <input type="hidden" value="<?php echo $timetableValues['timetable_id']; ?>" class="form-control" name="timetableID" id="timetableID">
+                            <input type="hidden" value="<?php echo $timetableValues['timetable_id']; ?>" class="form-control" name="timetableId" id="timetableId">
                             <input data-loading-text="Updating Timetable..." type="submit" name="invoice_btn" value="Save Timetable" class="btn btn-success submit_btn invoice-save-btm">
                         </div>
 

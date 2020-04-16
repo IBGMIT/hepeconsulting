@@ -21,6 +21,7 @@ $timetable->checkLoggedIn();
                 <th>Description</th>
                 <th>Quantity of time</th>
                 <th>Project Id</th>
+                <th>User Id</th>
                 <th>Print</th>
                 <th>Edit</th>
                 <th>Delete</th>
@@ -38,6 +39,7 @@ $timetable->checkLoggedIn();
                 <td>'.$timetableDetails["description"].'</td>
                 <td>'.$timetableDetails["time"].'</td>
                 <td>'.$timetableDetails["project_id"].'</td>
+                <td>'.$timetableDetails["user_id"].'</td>
                 <td><a href="print_timetable.php?timetable_id='.$timetableDetails["timetable_id"].'" title="Print Timetable"><span class="glyphicon glyphicon-print"></span></a></td>
                 <td><a href="edit_timetable.php?update_id='.$timetableDetails["timetable_id"].'"  title="Edit Timetable"><span class="glyphicon glyphicon-edit"></span></a></td>
                 <td><a href="#" id="'.$timetableDetails["timetable_id"].'" class="deleteInvoice"  title="Delete Invoice"><span class="glyphicon glyphicon-remove"></span></a></td>

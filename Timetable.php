@@ -63,15 +63,15 @@ class Timetable{
         if($POST['timetableId']) {
             $sqlInsert = "
 				UPDATE ".$this->TimeTable." 
-				SET date = '".$POST['date']."', time_definition= '".$POST['timeDefinition']."', description = '".$POST['description']."', project_id = '".$POST['projectId']."'
-				timetable_id = '".$POST['timetableId']."'";
+				SET date = '".$POST['date']."', time_definition= '".$POST['timeDefinition']."', description = '".$POST['description']."', project_id = '".$POST['projectId']."', user_id ='".$POST['userId']."'
+				WHERE timetable_id = '".$POST['timetableId']."' AND user_id = '".$POST['user_id']."'";
             mysqli_query($this->dbConnect, $sqlInsert);
         }
         $this->deleteTimetableItems($POST['timetableId']);
         for ($i = 0; $i < count($POST['timetableId']); $i++) {
             $sqlInsertItem = "
-				INSERT INTO ".$this->TimeTable."(date, time_definition, description, time, project_id) 
-				VALUES ('".$POST['timetableid']."', '".$POST['date'][$i]."', '".$POST['timeDefinition'][$i]."', '".$POST['description'][$i]."', '".$POST['time'][$i]."', '".$POST['projectId'][$i]."')";
+				INSERT INTO ".$this->TimeTable."(timetable_id, date, time_definition, description, time, project_id,user_id ) 
+				VALUES ('".$POST['timetableId']."', '".$POST['date'][$i]."', '".$POST['timeDefinition'][$i]."', '".$POST['description'][$i]."', '".$POST['time'][$i]."', '".$POST['projectId'][$i]."','".$POST['userId'][$i]."' )";
             mysqli_query($this->dbConnect, $sqlInsertItem);
         }
     }
@@ -85,7 +85,7 @@ class Timetable{
     public function getTimeTableList(){
         $sqlQuery = "
 			SELECT * FROM ".$this->TimeTable."
-			 WHERE timetable_id = '3'";
+			 WHERE user_id = '".$_SESSION['userid']."'";
         return  $this->getData($sqlQuery);
     }
 
