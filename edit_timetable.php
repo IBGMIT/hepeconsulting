@@ -63,7 +63,7 @@ if(!empty($_GET['update_id']) && $_GET['update_id']) {
                                 ?>
                                 <tr>
                                     <td><input class="itemRow" type="checkbox"></td>
-                                    <td><input type="text" value="<?php echo $timetableItem["timetable_id"]; ?>" name="timetableID[]" id="timetableID_<?php echo $count; ?>" class="form-control" autocomplete="off"></td>
+                                    <td><input type="number" value="<?php echo $timetableItem["timetable_id"]; ?>" name="timetableID[]" id="timetableID_<?php echo $count; ?>" class="form-control" autocomplete="off"></td>
                                     <td><input type="date" value="<?php echo $timetableItem["date"]; ?>" name="date[]" id="date_<?php echo $count; ?>" class="form-control" autocomplete="off"></td>
                                     <td><input type="text" value="<?php echo $timetableItem["time_definition"]; ?>" name="timeDefinition[]" id="timeDefinition_<?php echo $count; ?>" class="form-control quantity" autocomplete="off"></td>
                                     <td><input type="text" value="<?php echo $timetableItem["description"]; ?>" name="description[]" id="description_<?php echo $count; ?>" class="form-control price" autocomplete="off"></td>
