@@ -2,7 +2,7 @@
 class Invoice{
 	private $host  = 'localhost';
     private $user  = 'root';
-    private $password   = "peder1017";
+    private $password   = "Sugmegsidelengs123";
     private $database  = "banks";
 	private $invoiceUserTable = 'invoice_user';	
     private $invoiceOrderTable = 'invoice_order';
